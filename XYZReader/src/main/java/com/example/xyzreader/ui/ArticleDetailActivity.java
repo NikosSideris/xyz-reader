@@ -47,7 +47,7 @@ public class ArticleDetailActivity extends AppCompatActivity
     private View mUpButtonContainer;
     private View mUpButton;
 
-    private FloatingActionButton mFab;
+//    private FloatingActionButton mFab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +99,7 @@ public class ArticleDetailActivity extends AppCompatActivity
 
 //        mUpButtonContainer = findViewById(R.id.up_container);
 
-        mFab=findViewById(R.id.share_fab);
+//        mFab=findViewById(R.id.share_fab);
 
 //        mUpButton = findViewById(R.id.toolbar);
 

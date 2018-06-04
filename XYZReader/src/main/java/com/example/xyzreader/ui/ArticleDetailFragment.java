@@ -1,7 +1,9 @@
 package com.example.xyzreader.ui;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.LoaderManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
@@ -17,6 +19,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
 import android.text.Html;
@@ -67,6 +70,10 @@ private static final float PARALLAX_FACTOR = 4.75f;
     private SimpleDateFormat outputFormat = new SimpleDateFormat();
     // Most time functions can only handle 1902 - 2037
     private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
+
+    private FloatingActionButton mFab;
+    private Activity mActivity;
+    private View.OnClickListener listener;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -132,7 +139,7 @@ private static final float PARALLAX_FACTOR = 4.75f;
                 mScrollY = mScrollView.getScrollY();
                 getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
                 mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
-                updateStatusBar();
+//                updateStatusBar();
             }
         });
 
@@ -141,7 +148,12 @@ private static final float PARALLAX_FACTOR = 4.75f;
 
         mStatusBarColorDrawable = new ColorDrawable(0);
 
-        getActivity().findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
+//        if(this.mActivity != null){
+            mFab=mRootView.findViewById(R.id.share_fab);
+//        }
+//        mFab=getActivity().findViewById(R.id.share_fab);
+//        getActivity().findViewById(R.id.share_fab).
+        mFab.setOnClickListener(listener =new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
@@ -152,7 +164,7 @@ private static final float PARALLAX_FACTOR = 4.75f;
         });
 
         bindViews();
-        updateStatusBar();
+//        updateStatusBar();
         return mRootView;
     }
 
@@ -245,7 +257,7 @@ private static final float PARALLAX_FACTOR = 4.75f;
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
                                 mRootView.findViewById(R.id.meta_bar)
                                         .setBackgroundColor(mMutedColor);
-                                updateStatusBar();
+//                                updateStatusBar();
                             }
                         }
 
@@ -302,4 +314,15 @@ private static final float PARALLAX_FACTOR = 4.75f;
                 ? (int) mPhotoContainerView.getTranslationY() + mPhotoView.getHeight() - mScrollY
                 : mPhotoView.getHeight() - mScrollY;
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mFab.setOnClickListener(null);
+    }
+//    @Override
+//    public void onAttach(Activity activity) {
+//        super.onAttach(activity);
+//        this.mActivity = activity;
+//    }
 }
