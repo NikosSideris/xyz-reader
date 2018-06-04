@@ -14,4 +14,10 @@
     <dimen name="detail_metabar_title_bottom_padding">4dp</dimen>
     <dimen name="detail_body_top_margin">16dp</dimen>
     <dimen name="detail_body_bottom_margin">88dp</dimen>
+
+
+    <!--added-->
+    <!--list_item-->
+    <dimen name="list_item_thumbnail_size">150dp</dimen>
+
 </resources>

@@ -10,7 +10,7 @@
         android:layout_height="112dp"
         android:layout_width="match_parent"
         android:background="@drawable/toolbar_background_gradient"
-        android:elevation="8dp"
+        android:elevation="@dimen/toolbar_elevation"
         android:fitsSystemWindows="true">
         <!--android:background="?colorPrimary"-->
 <!--192dp-->
@@ -30,7 +30,8 @@
                 android:layout_marginLeft="@dimen/list_toolbar_side_margin"
                 android:layout_marginRight="@dimen/list_toolbar_side_margin"
                 android:layout_gravity="bottom"
-                app:logo="@drawable/logo">
+                app:logo="@drawable/logo"
+                android:elevation="@dimen/toolbar_elevation">
 
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>

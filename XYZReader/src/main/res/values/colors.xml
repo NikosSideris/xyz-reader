@@ -25,4 +25,5 @@
 
     //added
     <color name="transparent">@android:color/transparent</color>
+    <color name="dark_grey">#262626</color>
 </resources>
