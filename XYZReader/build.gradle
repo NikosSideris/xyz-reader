@@ -35,6 +35,5 @@ dependencies {
 
     //added
     implementation "com.android.support:design:$androidSupportVersion"
-    implementation 'com.jakewharton.timber:timber:4.7.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
 }

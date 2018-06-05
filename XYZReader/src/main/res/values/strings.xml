@@ -9,4 +9,8 @@
 
     <string name="up">Up</string>
 
+    <string name="communicationProblem">Seems there is no connection to the internet.
+        The app will function but with limited functionality.
+        </string>
+
 </resources>

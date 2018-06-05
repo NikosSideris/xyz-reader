@@ -1,4 +1,4 @@
-<android.support.design.widget.CoordinatorLayout
+<android.support.design.widget.CoordinatorLayout android:id="@+id/list_activity"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -7,13 +7,12 @@
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/toolbar_container"
-        android:layout_height="112dp"
+        android:layout_height="@dimen/article_list_layout_height"
         android:layout_width="match_parent"
         android:background="@drawable/toolbar_background_gradient"
         android:elevation="@dimen/toolbar_elevation"
         android:fitsSystemWindows="true">
-        <!--android:background="?colorPrimary"-->
-<!--192dp-->
+
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -53,8 +52,7 @@
 
                 android:paddingLeft="@dimen/list_side_margin"
                 android:paddingRight="@dimen/list_side_margin"
-                android:paddingBottom="28dp" />
-            <!--android:paddingTop="116dp"-->
+                android:paddingBottom="@dimen/article_list_paddingBottom" />
 
         </android.support.v4.widget.SwipeRefreshLayout>
 
